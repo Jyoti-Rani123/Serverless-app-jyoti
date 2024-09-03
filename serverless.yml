@@ -1,0 +1,31 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: DEmo-project-sls
+frameworkVersion: "4"
+plugins:
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-southeast-1
+
+functions:
+  jyoti:
+    handler: handler.jyoti
+    events:
+      - httpApi:
+          path: /jyoti
+          method: get
+
+
+  jyoti2:
+    handler: handler.jyoti2
+    events:
+      - httpApi:
+          path: /jyoti2
+          method: get
+
+
+
+
+
+
